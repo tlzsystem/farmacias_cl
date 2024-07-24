@@ -1,0 +1,54 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'cl.samueltoloza.farmaciascl'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "cl.samueltoloza.farmaciascl"
+        minSdk 29
+        targetSdk 34
+        versionCode 3
+        versionName "1.2"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    def room_version = "2.6.1"
+    def retrofit_version = "2.11.0"
+    def hilt_version = "2.51.1"
+    def nav_version = "2.7.7"
+
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    annotationProcessor "com.google.dagger:hilt-compiler:$hilt_version"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+}

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Farmacias CL</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_bar_hint">Buscar por Comuna</string>
+    <string name="pharmacy">Farmacia</string>
+    <string name="schedule">Horario:</string>
+    <string name="address">Dirección:</string>
+</resources>
