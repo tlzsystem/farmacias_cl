@@ -7,7 +7,17 @@
 
     <fragment
         android:id="@+id/pharmacyListFragment"
-        android:name="cl.samueltoloza.farmaciascl.ui.PharmacyListFragment"
+        android:name="cl.samueltoloza.farmaciascl.ui.PharmacyList.PharmacyListFragment"
         android:label="fragment_pharmacy_list"
         tools:layout="@layout/fragment_pharmacy_list" />
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="cl.samueltoloza.farmaciascl.ui.Information.InformationFragment"
+        android:label="fragment_information"
+        tools:layout="@layout/fragment_information" />
+    <fragment
+        android:id="@+id/emergencyContactsFragment"
+        android:name="cl.samueltoloza.farmaciascl.ui.EmergencyContacts.EmergencyContactsFragment"
+        android:label="fragment_emergency_contacts"
+        tools:layout="@layout/fragment_emergency_contacts" />
 </navigation>

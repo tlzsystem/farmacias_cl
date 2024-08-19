@@ -5,6 +5,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.util.Date;
+
 @Entity(tableName = "pharmacy")
 public class Pharmacy {
 
@@ -40,8 +42,27 @@ public class Pharmacy {
     private String local_lng;
     @ColumnInfo(name="funcionamiento_dia")
     private String funcionamiento_dia;
+    @ColumnInfo(name = "created")
+    private Date created;
 
     public Pharmacy() {
+    }
+
+
+    public Pharmacy(String local_nombre) {
+        this.local_nombre = local_nombre;
+    }
+
+    public Pharmacy(int local_id, String local_nombre, Date created) {
+        this.local_id = local_id;
+        this.local_nombre = local_nombre;
+        this.created = created;
+    }
+
+    public Pharmacy(int local_id, String local_nombre, String comuna_nombre) {
+        this.local_id = local_id;
+        this.local_nombre = local_nombre;
+        this.comuna_nombre = comuna_nombre;
     }
 
     public int getLocal_id() {
@@ -162,5 +183,13 @@ public class Pharmacy {
 
     public void setFuncionamiento_dia(String funcionamiento_dia) {
         this.funcionamiento_dia = funcionamiento_dia;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 }

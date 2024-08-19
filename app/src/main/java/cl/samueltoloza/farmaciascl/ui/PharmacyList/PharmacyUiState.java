@@ -1,4 +1,4 @@
-package cl.samueltoloza.farmaciascl.ui;
+package cl.samueltoloza.farmaciascl.ui.PharmacyList;
 
 
 public class PharmacyUiState {
@@ -13,6 +13,10 @@ public class PharmacyUiState {
     private String lng;
 
     public PharmacyUiState() {
+    }
+
+    public PharmacyUiState(String name) {
+        this.name = name;
     }
 
     public String getFullAddress(){

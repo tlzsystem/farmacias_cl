@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="90dp">
+    android:layout_height="180dp"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/pharmacyItem_pharmacyLabel"
@@ -12,9 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/pharmacy"
-        android:textSize="8sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/pharmacyItem_NameLabel"
@@ -23,72 +22,110 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
         android:text="TextView"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pharmacyItem_pharmacyLabel" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/pharmacyItem_scheduleLabel"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/schedule"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pharmacyItem_AddressLabel" />
-
-    <TextView
-        android:id="@+id/pharmacyItem_AddressLabel"
-        android:layout_width="45dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/address"
-        android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pharmacyItem_NameLabel" />
-
-    <TextView
-        android:id="@+id/pharmacyItem_AddressData"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="TextView"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/pharmacyItem_AddressLabel"
-        app:layout_constraintTop_toBottomOf="@+id/pharmacyItem_NameLabel" />
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/pharmacyItem_AddressLabel"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/address"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/pharmacyItem_AddressData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textSize="14sp"
+            />
 
-    <TextView
-        android:id="@+id/pharmacyItem_ScheduleData"
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:text="TextView"
-        android:textSize="10sp"
-        app:layout_constraintStart_toEndOf="@+id/pharmacyItem_scheduleLabel"
-        app:layout_constraintTop_toBottomOf="@+id/pharmacyItem_AddressData" />
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/pharmacyItem_CityLabel"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/comuna" />
 
-    <ImageButton
-        android:id="@+id/pharmacyItem_Callbutton"
+        <TextView
+            android:id="@+id/pharmacyItem_ComunaData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="TextView" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_call_24" />
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/pharmacyItem_scheduleLabel"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="@string/schedule"
+            android:textSize="14sp"/>
+        <TextView
+            android:id="@+id/pharmacyItem_ScheduleData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="TextView"
+            android:textSize="14sp" />
 
-    <ImageButton
-        android:id="@+id/pharmacyItem_MapButton"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/pharmacyItem_Callbutton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_map_24" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <Button
+            android:id="@+id/pharmacyItem_CallActionButton"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+
+            android:text="@string/call"
+            app:icon="@drawable/baseline_call_24" />
+        <View
+            android:layout_width="8dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/pharmacyItem_MapActionButton"
+            style="@style/Widget.Material3.Button.ElevatedButton.Icon"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+
+            android:text="@string/to_map"
+            app:icon="@drawable/baseline_map_24" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

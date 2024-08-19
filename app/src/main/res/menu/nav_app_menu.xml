@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/pharmacyListFragment"
+        android:title="@string/pharmacies"
+        android:icon="@drawable/baseline_emergency_24"
+        />
+    <item
+        android:id="@+id/emergencyContactsFragment"
+        android:title="@string/emergency"
+        android:icon="@drawable/baseline_call_24"/>
+    <item
+        android:id="@+id/informationFragment"
+        android:title="@string/information"
+        android:icon="@drawable/baseline_info_24"/>
+</menu>

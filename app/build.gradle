@@ -15,6 +15,13 @@ android {
         versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        def apiUrl = project.hasProperty("API_BASE_URL") ? project.API_BASE_URL : ""
+
+        buildConfigField "String", "API_BASE_URL", "\"${apiUrl}\""
+    }
+
+    buildFeatures{
+        buildConfig true
     }
 
     buildTypes {
@@ -27,14 +34,18 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
 
+    implementation libs.core
     def room_version = "2.6.1"
     def retrofit_version = "2.11.0"
     def hilt_version = "2.51.1"
     def nav_version = "2.7.7"
+    def gson_version = "2.11.0"
+    def mockito_version = "5.12.0"
 
 
     implementation libs.appcompat
@@ -44,6 +55,8 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
@@ -51,4 +64,8 @@ dependencies {
     annotationProcessor "com.google.dagger:hilt-compiler:$hilt_version"
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+
 }
